@@ -9,7 +9,6 @@ module.exports = new Command({
 	description: "WETH",
 	async run(message, args, client) {
 		if (!args[1]) return message.channel.send("Invalid command. Type `!weth<space><amount>` for more info.");
-		if (isNaN(parseInt(args[1]))) return message.channel.send("Invalid amount. Type `!weth<space><amount>` for more info.");
 		if (args[2]) return message.channel.send("Invalid command. Type `!weth<space><amount>` for more info.");
 
 		fetch('https://api.coingecko.com/api/v3/simple/price?ids=weth&vs_currencies=php')
