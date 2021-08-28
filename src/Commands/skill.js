@@ -15,7 +15,7 @@ module.exports = new Command({
 		fetch('https://api.coingecko.com/api/v3/simple/price?ids=cryptoblades&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
-				let x = body.cryptoblade.php.toFixed(2) * args[1];
+				let x = body.cryptoblades.php.toFixed(2) * args[1];
 				message.reply(`\`SKILL\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 	}
