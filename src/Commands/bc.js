@@ -23,27 +23,27 @@ module.exports = new Command({
 				baxs = 2;
 				break;
 			case 2:
-				bslp = 600;
+				bslp = 900;
 				baxs = 4;
 				break;
 			case 3:
-				bslp = 900;
+				bslp = 1800;
 				baxs = 6;
 				break;
 			case 4:
-				bslp = 1500;
+				bslp = 3300;
 				baxs = 8;
 				break;
 			case 5:
-				bslp = 2400;
+				bslp = 5700;
 				baxs = 10;
 				break;
 			case 6:
-				bslp = 3900;
+				bslp = 9600;
 				baxs = 12;
 				break;
 			case 7:
-				bslp = 6300;
+				bslp = 15900;
 				baxs = 14;
 				break;
 		}
