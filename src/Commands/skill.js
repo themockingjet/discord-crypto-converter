@@ -23,7 +23,7 @@ module.exports = new Command({
 			
 		} else if (!isNaN(parseInt(args[1])) && !args[2]) {
 			
-			fetch('https://api.coingecko.com/api/v3/simple/price?ids=axie-infinity&vs_currencies=php')
+			fetch('https://api.coingecko.com/api/v3/simple/price?ids=cryptoblades&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
 				let x = body['axie-infinity'].php.toFixed(2) * args[1];
