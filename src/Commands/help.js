@@ -12,7 +12,10 @@ module.exports = new Command({
 		if (!args[2] && args[1] != "crypto") return message.channel.send("Invalid command. Type `!help crypto` for more info.")
 
 		message.channel.send("```Crypto Converter - converts amount of slp to its current value.\n\n"
-							+"Command - Amount\nE.g.\n!slp<space><amount>\n!axs<space><amount>\n!weth<space><amount>\n!pvu<space><amount>\n!skill<space><amount>\n\nExtra: Breed Cost\n"
-							+"!bc 1     #number of breed```")
+						+ 	 "Available Tokens: slp, axs, weth, pvu, skill\n\n"
+						+	 "How to: !<token> <amount> or !<token> <amount> @ <price>\n"
+						+	 "E.g.\n!slp 200 [200 SLP]\n!slp 200 @ 7.30 [200 SLP at 7.30 php]\n\n"
+						+	 "Extra: Breed Cost\n"
+						+	 "!bc 1 [1-7]```")
 	}
 });
