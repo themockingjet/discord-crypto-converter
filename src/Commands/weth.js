@@ -26,7 +26,7 @@ module.exports = new Command({
 			fetch('https://api.coingecko.com/api/v3/simple/price?ids=weth&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
-				let x = body['weth'].php.toFixed(2) * args[1];
+				let x = (body['weth'].php * args[1]).toFixed(2);
 				message.reply(`\`WETH\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 		} else {

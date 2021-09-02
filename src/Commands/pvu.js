@@ -26,7 +26,7 @@ module.exports = new Command({
 			fetch('https://api.coingecko.com/api/v3/simple/price?ids=plant-vs-undead-token&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
-				let x = body['plant-vs-undead-token'].php.toFixed(2) * args[1];
+				let x = (body['plant-vs-undead-token'].php.toFixed(2) * args[1]).toFixed(2);
 				message.reply(`\`PVU\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 		} else {

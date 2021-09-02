@@ -27,7 +27,7 @@ module.exports = new Command({
 			fetch('https://api.coingecko.com/api/v3/simple/price?ids=axie-infinity&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
-				let x = body['axie-infinity'].php.toFixed(2) * args[1];
+				let x = (body['axie-infinity'].php * args[1]).toFixed(2);
 				message.reply(`\`AXS\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 		} else {
