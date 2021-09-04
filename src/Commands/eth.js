@@ -5,8 +5,8 @@ const Command = require("../Structures/Command.js");
 const fetch = require('node-fetch');
 
 module.exports = new Command({
-	name: "weth",
-	description: "WETH",
+	name: "eth",
+	description: "ETH",
 	async run(message, args, client) {
 		if (args[1] && isNaN(parseFloat(args[1]))) {
 			return message.channel.send("Invalid amount. Type `!eth`, `!eth <amount>` or `!eth <amount> @ <price>`.")
