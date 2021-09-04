@@ -37,7 +37,7 @@ module.exports = new Command({
 				message.reply(`\`AXS\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 		} else {
-			return message.channel.send("Invalid command. Type `!axs <amount>` or `!axs <amount> @ <price>`.")
+			return message.channel.send("Invalid command. Type `!axs`, `!axs <amount>` or `!axs <amount> @ <price>`.")
 		};
 	}
 });

@@ -8,9 +8,15 @@ module.exports = new Command({
 	name: "pvu",
 	description: "Plant vs Undead",
 	async run(message, args, client) {
-		if (isNaN(parseFloat(args[1]))) {
-			return message.channel.send("Invalid amount. Type `!pvu <amount>` or `!pvu <amount> @ <price>`.")
+		if (args[1] && isNaN(parseFloat(args[1]))) {
+			return message.channel.send("Invalid amount. Type `!pvu`, `!pvu <amount>` or `!pvu <amount> @ <price>`.")
 
+		} else if (!args[1]) {
+			fetch('https://api.coingecko.com/api/v3/simple/price?ids=plant-vs-undead-token&vs_currencies=php')
+			.then(res => res.json())
+			.then(body => {
+				message.reply(`\`PVU\` **1** => \`PHP\` **${body['plant-vs-undead-token'].php}**`);
+			});
 		} else if (args[2] === "@" && !args[3]) {
 			return message.channel.send("Invalid command. Type `!pvu <amount> <@> <price>`.")
 
@@ -30,7 +36,7 @@ module.exports = new Command({
 				message.reply(`\`PVU\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 		} else {
-			return message.channel.send("Invalid command. Type `!pvu <amount>` or `!pvu <amount> @ <price>`.")
+			return message.channel.send("Invalid command. Type `!pvu`, `!pvu <amount>` or `!pvu <amount> @ <price>`.")
 		};
 	}
 });
