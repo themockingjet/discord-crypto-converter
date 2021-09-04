@@ -9,7 +9,7 @@ module.exports = new Command({
 	description: "Axie Infinity Shard",
 	async run(message, args, client) {
 
-		if (isNaN(parseFloat(args[1]))) {
+		if (!args[1] && isNaN(parseFloat(args[1]))) {
 			return message.channel.send("Invalid amount. Type `!axs`,`!axs <amount>` or `!axs <amount> @ <price>`.")
 
 		} else if (!args[1]) {
