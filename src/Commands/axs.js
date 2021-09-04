@@ -10,11 +10,9 @@ module.exports = new Command({
 	async run(message, args, client) {
 
 		if (args[1] && isNaN(parseFloat(args[1]))) {
-			console.log(1);
 			return message.channel.send("Invalid amount. Type `!axs`,`!axs <amount>` or `!axs <amount> @ <price>`.")
 			
 		} else if (!args[1]) {
-			console.log(2);
 			fetch('https://api.coingecko.com/api/v3/simple/price?ids=axie-infinity&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
