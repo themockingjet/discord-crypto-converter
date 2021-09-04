@@ -9,8 +9,14 @@ module.exports = new Command({
 	description: "Cryptoblades SKILL",
 	async run(message, args, client) {
 		if (isNaN(parseFloat(args[1]))) {
-			return message.channel.send("Invalid amount. Type `!skill <amount>` or `!skill <amount> @ <price>`.")
+			return message.channel.send("Invalid amount. Type `!skill`, `!skill <amount>` or `!skill <amount> @ <price>`.")
 
+		} else if (!args[1]) {
+			fetch('https://api.coingecko.com/api/v3/simple/price?ids=cryptoblades&vs_currencies=php')
+			.then(res => res.json())
+			.then(body => {
+				message.reply(`\`SKILL\` **1** => \`PHP\` **${body['cryptoblades'].php}**`);
+			});
 		} else if (args[2] === "@" && !args[3]) {
 			return message.channel.send("Invalid command. Type `!skill <amount> <@> <price>`.")
 
@@ -30,7 +36,7 @@ module.exports = new Command({
 				message.reply(`\`SKILL\` **${args[1]}** => \`PHP\` **${x}**`);
 			});
 		} else {
-			return message.channel.send("Invalid command. Type `!skill <amount>` or `!skill <amount> @ <price>`.")
+			return message.channel.send("Invalid command. Type `!skill`, `!skill <amount>` or `!skill <amount> @ <price>`.")
 		};
 	}
 });
