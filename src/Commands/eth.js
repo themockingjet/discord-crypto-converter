@@ -31,7 +31,7 @@ module.exports = new Command({
 			
 		} else if (!isNaN(parseFloat(args[1])) && !args[2]) {
 			
-			fetch('https://api.coingecko.com/api/v3/simple/price?ids=weth&vs_currencies=php')
+			fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=php')
 			.then(res => res.json())
 			.then(body => {
 				let x = (body['ethereum'].php * args[1]).toFixed(2);
