@@ -8,7 +8,7 @@ module.exports = new Command({
 	name: "skill",
 	description: "Cryptoblades SKILL",
 	async run(message, args, client) {
-		if (isNaN(parseFloat(args[1]))) {
+		if (args[1] && isNaN(parseFloat(args[1]))) {
 
 			return message.channel.send("Invalid amount. Type `!skill`, `!skill <amount>` or `!skill <amount> @ <price>`.");
 
